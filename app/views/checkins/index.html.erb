@@ -1,16 +1,22 @@
-<h1>Checkins: <span><%= @checkins.count %></span></h1>
+<div class="container">
+  <div class="hero-unit">
+    <h1>Checkins: <span><%= @checkins.count %></span></h1>
+  </div>
 
-<ul>
-  <% if @checkins.empty? %>
-    <li>No check-ins yet.</li>
-  <% else %>
-    <% @checkins.each do |checkin| %>
-      <li>
-        <%= checkin.created_at.strftime('%d') %>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+  <div class="row">
+    <ul id="checkins">
+      <% if @checkins.empty? %>
+        <li>No check-ins yet.</li>
+      <% else %>
+        <% @checkins.each do |checkin| %>
+          <li>
+            <%= checkin.created_at.strftime('%d') %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <script>
 jQuery(document).ready(function() {
